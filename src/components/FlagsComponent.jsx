@@ -23,7 +23,7 @@ export const FlagsComponent = (props) => {
 								{item.name.common}
 							</h1>
 							<div className="card__info"><b>Population:</b> {item.population} </div>
-							<div className="card__info"><b>Region:</b>{item.region} </div>
+							<div className="card__info"><b>Region:</b> {item.region} </div>
 							<div className="card__info"><b>Capital:</b> {item.capital}</div>
 
 						</div>

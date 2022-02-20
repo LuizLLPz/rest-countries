@@ -5,45 +5,58 @@
   --container-dark: #2B3743;
 }
 
+
+
+/* General Styles */
+
 :root {
   height:  100vh;
 }
+
 
 body {
   margin: 0;
 }
 
+
 .app--light{
   background-color:  var(--color);
 }
+
 
 .app--dark {
   background-color: var(--color-dark);
 }
 
 
-.filters, .header{
-  display:  flex;
-  padding: 25px 50px 25px 80px;
+.header, .filters, .flags_container, .container__card, .filters__search{
+  display: flex;
 }
 
+
+/* Header Related Styles */
+
 .header {
+  padding: 5px 50px 5px 80px;
   font-size: 12px;
   font-family: sans-serif;
   align-items: center;
 }
 
-.header--light, .container__card--light {
+
+.header--light, .container__card--light, .filters__search--light {
   background-color:  var(--container-light);
   color: black;
   box-shadow: 2px 2px 10px gray;
 }
 
-.header--dark, .container__card--dark{
+
+.header--dark, .container__card--dark, .filters__search--dark {
   background-color:  var(--container-dark);
-  box-shadow: 2px 2px 5vpx #1E2A36;
+  box-shadow: 2px 2px 2px #1E2A36;
   color: white;
 }
+
 
 .theme_switcher {
   user-select: none;
@@ -53,17 +66,52 @@ body {
   cursor: pointer;
 }
 
+
+/* Filters Related syles */ 
+
+.filters {
+  padding: 50px 80px;
+}
+
+.filters__search {
+  height: 40px;
+  width: 400px;
+  border-radius: 8px;
+  align-items:  center;
+}
+
+
+.search__input {
+  width:  80%;
+  height: 80%;
+  outline: none;
+  border: none;
+}
+
+.search__input--light {
+  background-color:  var(--container-light);
+  color:  black;
+}
+
+
+.search__input--dark {
+  background-color:  var(--container-dark);
+  color:  white;
+}
+
+
+/* Flags Related Styles */
+
 .flags_container {
-  display: flex;
   padding: 0 5%;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 2rem;
 }
 
 
 .container__card {
-  width: 270px;
+  width: 400px;
   font-family: sans-serif;
   flex-direction: column;
   border-radius: 8px;
@@ -71,9 +119,8 @@ body {
 } 
 
 
-
 .card__image {
-  height: 160px;
+  height: 270px;
   background-size:  100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -94,3 +141,20 @@ body {
   margin-bottom: 5px;
   font-weight: lighter;
 } 
+
+
+@media screen and (min-width: 650px) {
+
+  .flags_container {
+    justify-content: space-around;
+  }
+
+  .container__card {
+    width: 270px;
+  }
+
+  .card__image {
+    height: 160px;
+  }
+  
+}
