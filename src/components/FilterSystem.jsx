@@ -12,7 +12,7 @@ export const FilterSystem = () => {
 				<img className="search__img"/>
 				<input type="text" className={"search__input " +
 			 	(theme == 'light' ? 'search__input--light' : 'search__input--dark')}
-			 	/>
+			 	placeholder="Search for a country..."/>
 			</div>
 		</div>
 	);

@@ -19,7 +19,7 @@ function App() {
 
   return (
     <ThemeContext.Provider value={{theme, setTheme}}>
-      <div className={'app ' + (theme == 'light' ? 'app--light' :  'app--dark')}>
+      <div className={`app app--${theme == 'light' ? 'light' :  'dark'} `}>
         <Header/>
         <FilterSystem/>
         <FlagsComponent data={data}/>
