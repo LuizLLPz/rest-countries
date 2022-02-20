@@ -3,7 +3,7 @@ import { Header } from './components/Header';
 import { FilterSystem } from './components/FilterSystem'
 import { FlagsComponent } from './components/FlagsComponent'
 
-import './styles.css';
+import './css/styles.css';
 
 export const ThemeContext = React.createContext(null);
 
