@@ -1,10 +1,17 @@
-import { useContext } from 'react';
+import { useState, useContext } from 'react';
 import { ThemeContext } from '../App';
 import { Modal } from './Modal';
 
+
 export const FlagsComponent = (props) => {
+
 	const { data } = props;
 	const { theme } = useContext(ThemeContext);
+	const [state, setModalState] = useState({visibility: false, country: null});
+
+	const changeModal = (country = null) => {
+		setModalState({visibility : !state.visibility , country});
+	}
 
 	if (!data) {
 		return (
@@ -12,28 +19,29 @@ export const FlagsComponent = (props) => {
 		);
 	} else { 
 		return (
-				<>
-					<Modal/>
-					<div className="flags_container" onClick={() => console.log(data)}>
+				<>	
+					<Modal country={state.country} 
+						visibility={state.visibility}
+						change={changeModal}/>
+					<div className="flags_container">
 						{data.map( item => {
 							return (
-								<div className={`container__card container__card--${theme == 'light' ? 'light' : 'dark'}`}
-									onClick={ () => {
-										alert('pega na minhahahaha')		
-								}}>
+								<div className={`container__card container--${theme == 'light' ? 'light' : 'dark'}`}
+									onClick={() => changeModal(item)} key={item.key}
+								>
 									<div className="card__image" style={{backgroundImage: `url(${item.flags.svg})`}}> 
 									</div>
 									<h1 className={'card__header'}>
 										{item.name.common}
 									</h1>
 									<div className="card__info">
-										<span class="bold">Population:</span> {item.population}
+										<span className="bold">Population:</span> {item.population}
 									</div>
 									<div className="card__info">
-										<span class="bold">Region:</span> {item.region} 
+										<span className="bold">Region:</span> {item.region} 
 									</div>
 									<div className="card__info">
-										<span class="bold">Capital:</span> {item.capital}
+										<span className="bold">Capital:</span> {item.capital}
 									</div>
 								</div>
 							);

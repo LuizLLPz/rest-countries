@@ -1,10 +1,21 @@
-.country_modal {
+.modal {
 	position: fixed;
 	top:  0;
 	left:  0;
 	width:  100vw;
 	height:  100vh;
-	z-index: 2;
-	visibility: hidden;
+	z-index: 0;
 }
 
+
+.modal__container {
+	padding: 50px;
+}
+
+.modal__goBack {
+	cursor:  pointer;
+	align-items: center;
+	justify-content:  center;
+	width: 100px;
+	height: 50px;
+}

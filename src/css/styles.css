@@ -24,12 +24,12 @@ body {
 }
 
 
-.app--dark {
+.app--dark, .modal-- {
   background-color: var(--color-dark);
 }
 
 
-.header, .filters, .flags_container, .container__card, .filters__search{
+.header, .filters, .flags_container, .container__card, .filters__search, .modal__goBack{
   display: flex;
 }
 
@@ -44,14 +44,14 @@ body {
 }
 
 
-.header--light, .container__card--light, .filters__search--light, .country_modal--light {
+.header--light, .container--light {
   background-color:  var(--container-light);
   color: black;
   box-shadow: 1px 1px 8px #DADADA;
 }
 
 
-.header--dark, .container__card--dark, .filters__search--dark, .country_modal--dark {
+.header--dark, .container--dark {
   background-color:  var(--container-dark);
   box-shadow: 2px 2px 2px #1E2A36;
   color: white;
@@ -71,6 +71,7 @@ body {
 
 .filters {
   padding: 50px 80px;
+  z-index: 3;
 }
 
 .filters__search {

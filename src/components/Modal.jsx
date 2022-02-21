@@ -1,14 +1,22 @@
-import { useState, useContext } from 'react';
+import { useContext } from 'react';
 import { ThemeContext } from '../App.js'
-import '../css/modalStyles.css'
+import {Header } from './Header';
+import '../css/modal_styles.css'
 
 
 export const Modal = (props) => {
 	const { theme } = useContext(ThemeContext);
-	const [visibility, setVisibility] = useState('hidden');
+	const {country, visibility, change} = props;
 	return (
-		<div className={`country_modal country_modal--${theme =='light' ? 'light' : 'dark'}`}>
-
+		<div className={`modal app--${theme =='light' ? 'light' : 'dark'}`}
+		style={{visibility : visibility ? 'visible' : 'hidden'}}
+		>
+		<Header/>
+		<div className="modal__container">
+			<div className={`modal__goBack container--${theme =='light' ? 'light' : 'dark'}`} onClick={change}>
+				 {`<- Back`}
+			</div>
+		</div>
 		</div>
 	);
 }
