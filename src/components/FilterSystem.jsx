@@ -8,7 +8,7 @@ export const FilterSystem = () => {
 		<div className="filters">
 			<div className={`filters__search container--${theme == 'light' ? 'light' : 'dark'}`}>
 				<img className="search__img"/>
-				<input type="text" className={`search__input search__input--${theme == 'light' ? 'light' : 'dark'}`}
+				<input type="text" className={`search__input search__input\--${theme == 'light' ? 'light' : 'dark'}`}
 			 	placeholder="Search for a country..."/>
 			</div>
 		</div>

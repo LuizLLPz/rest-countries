@@ -26,10 +26,12 @@ body {
 
 .app--dark, .modal-- {
   background-color: var(--color-dark);
+  color: white;
 }
 
 
-.header, .filters, .flags_container, .container__card, .filters__search, .modal__goBack{
+.header, .filters, .flags_container, .container__card, .filters__search, .modal__container, .modal__goBack,
+.modal__country, .country__details {
   display: flex;
 }
 
@@ -46,7 +48,6 @@ body {
 
 .header--light, .container--light {
   background-color:  var(--container-light);
-  color: black;
   box-shadow: 1px 1px 8px #DADADA;
 }
 
@@ -91,7 +92,6 @@ body {
 
 .search__input--light {
   background-color:  var(--container-light);
-  color:  black;
 }
 
 

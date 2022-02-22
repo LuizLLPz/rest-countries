@@ -9,7 +9,7 @@ export const FlagsComponent = (props) => {
 	const { theme } = useContext(ThemeContext);
 	const [state, setModalState] = useState({visibility: false, country: null});
 
-	const changeModal = (country = null) => {
+	const changeModal = (country) => {
 		setModalState({visibility : !state.visibility , country});
 	}
 

@@ -12,10 +12,36 @@
 	padding: 50px;
 }
 
+
+.modal__container, .country__details {
+	flex-direction: column;
+}
+
 .modal__goBack {
 	cursor:  pointer;
 	align-items: center;
 	justify-content:  center;
 	width: 100px;
 	height: 50px;
+}
+
+
+.modal__country {
+	margin-top: 50px;
+}
+
+
+.country__flag {
+	padding: 20px;
+	width: 500px;
+	height:  300px;
+}
+
+.country__details {
+	padding: 20px 100px;
+	font-family:  sans-serif;
+}
+
+.details__name {
+	margin-bottom:  20px;
 }
