@@ -9,14 +9,19 @@
 
 /* General Styles */
 
-:root {
-  height:  100vh;
+html, body {
+  height: 100%;
+}
+
+#root, .app {
+  min-height: 100vh;
 }
 
 
 body {
-  margin: 0;
+  margin:  0;
 }
+
 
 
 .app--light{
@@ -98,6 +103,10 @@ body {
 .search__input--dark {
   background-color:  var(--container-dark);
   color:  white;
+}
+
+.search__select {
+  margin-left: auto;
 }
 
 

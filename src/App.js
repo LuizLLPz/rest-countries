@@ -10,6 +10,9 @@ export const ThemeContext = React.createContext(null);
 function App() {
   const [theme, setTheme] = useState('light');
   const [data, setData] = useState();
+  const [countriesResult, setCountriesResult] = useState()
+  const [aliases, setAliases] = useState({});
+
   useEffect(async() => {
      let resp = await fetch("https://restcountries.com/v3.1/all"); 
      const data = await resp.json();
@@ -17,16 +20,23 @@ function App() {
      setData(
        data.map(item => ({...item, key: uuid()}))
      );
-
+     setAliases(
+       data.reduce((aliases, item) => Object.assign(aliases, {[item.cca3] : item.name.common}), {})
+     );
+     setCountriesResult(data);
   },[]);
   
+  const changeCountries = (newCountries) => {
+    setCountriesResult(newCountries);
+  }
+
 
   return (
     <ThemeContext.Provider value={{theme, setTheme}}>
       <div className={`app app--${theme == 'light' ? 'light' :  'dark'} `}>
         <Header/>
-        <FilterSystem/>
-        <FlagsComponent data={data}/>
+        <FilterSystem data={data} setCountries={changeCountries}/>
+        <FlagsComponent data={countriesResult} aliases={aliases}/>
       </div> 
     </ThemeContext.Provider>
   );

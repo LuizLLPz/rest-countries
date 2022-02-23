@@ -1,6 +1,7 @@
 import { useState, useContext } from 'react';
 import { ThemeContext } from '../App';
 import { Modal } from './Modal';
+import { checkTheme } from '../utils/Utils';
 
 
 export const FlagsComponent = (props) => {
@@ -22,11 +23,12 @@ export const FlagsComponent = (props) => {
 				<>	
 					<Modal country={state.country} 
 						visibility={state.visibility}
-						change={changeModal}/>
+						change={changeModal}
+						aliases={props.aliases}/>
 					<div className="flags_container">
 						{data.map( item => {
 							return (
-								<div className={`container__card container--${theme == 'light' ? 'light' : 'dark'}`}
+								<div className={`container__card ${checkTheme(undefined, theme)}`}
 									onClick={() => changeModal(item)} key={item.key}
 								>
 									<div className="card__image" style={{backgroundImage: `url(${item.flags.svg})`}}> 
