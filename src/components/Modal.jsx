@@ -84,22 +84,25 @@ export const Modal = (props) => {
 						<img src={flags.png} alt={`${name.common} flag`} 
 						className={`country__flag ${checkTheme(undefined, theme)}`}/>
 						<div className="country__details" >
-							<h1 className="details__name">{name.common}</h1>
-							<div className="details__item"><span className="bold">Native name:</span>{Object.values(name.nativeName)[0].common}</div>
-							<div className="details__item"><span className="bold">Population:</span> {population}</div>
-							<div className="details__item"><span className="bold">Region:</span> {region}</div>
-							<div className="details__item"><span className="bold">Sub Region</span>: {subregion}</div>
-							<div className="details__item" ><span className="bold">Capital:</span> {capital}</div>
-							<div className="details__right">
-								<div className="details__item"><span className="bold">Top level domain:</span> {tld}</div>
-								{/*Map the list of currencies and add a comma if necessary */}
-								{currenciesBlock}
-								{languagesBlock}
-							</div>
-								{bordersBlock}
+							<div className="upper_block">
+								<div>
+									<h1 className="details__name">{name.common}</h1>
+									<div className="details__item"><span className="bold">Native name:</span>{Object.values(name.nativeName)[0].common}</div>
+									<div className="details__item"><span className="bold">Population:</span> {population}</div>
+									<div className="details__item"><span className="bold">Region:</span> {region}</div>
+									<div className="details__item"><span className="bold">Sub Region</span>: {subregion}</div>
+									<div className="details__item" ><span className="bold">Capital:</span> {capital}</div>
+								</div>
+								<div class="upper_right">
+									<div className="details__item"><span className="bold">Top level domain:</span> {tld}</div>
+										{/*Map the list of currencies and add a comma if necessary */}
+										{currenciesBlock}
+										{languagesBlock}
+									</div>
+								</div>
 							
-
-						</div>
+								{bordersBlock}
+							</div>
 					</div>
 				</div>
 			</>
