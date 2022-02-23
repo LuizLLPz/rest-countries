@@ -33,7 +33,7 @@ export const FilterSystem = (props) => {
 				<input type="text" className={`search__input search__input--${theme == 'light' ? 'light' : 'dark'}`}
 			 	onChange={e => changeBySearch(e)} placeholder="Search for a country..."/>
 			</div>
-			<select className={`search__select ${checkTheme(undefined, theme)}`} onChange={e => changeByFilter(e)}>
+			<select className={`filters__select ${checkTheme(undefined, theme)}`} onChange={e => changeByFilter(e)}>
 			 		<option value="none">No Region</option>
 			 		<option value="Africa">Africa</option>
 			 		<option value="Americas">América</option>

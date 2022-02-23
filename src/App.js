@@ -8,7 +8,7 @@ import './css/styles.css';
 export const ThemeContext = React.createContext(null);
 
 function App() {
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
   const [data, setData] = useState();
   const [countriesResult, setCountriesResult] = useState()
   const [aliases, setAliases] = useState({});
@@ -16,7 +16,6 @@ function App() {
   useEffect(async() => {
      let resp = await fetch("https://restcountries.com/v3.1/all"); 
      const data = await resp.json();
-     console.log(data)
      setData(
        data.map(item => ({...item, key: uuid()}))
      );

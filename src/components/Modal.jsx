@@ -21,7 +21,7 @@ export const Modal = (props) => {
 	const currKeys = currencies ? Object.keys(currencies) : null;
 	const langKeys = languages ? Object.keys(languages) : null; 
 	const currenciesBlock = currencies ? (
-		<div>
+		<div className="details__item">
 			<span className="bold">
 				Currencies:
 			</span>
@@ -34,7 +34,7 @@ export const Modal = (props) => {
 		</div>
 		)	: '';
 	const languagesBlock = languages ? (
-		<div>
+		<div className="details__item">
 			<span className="bold">
 				Languages:
 			</span>
@@ -48,26 +48,24 @@ export const Modal = (props) => {
 	) : '';
 
 	const bordersBlock = borders ? (
-		<div>
-			<span className="bold">
-				Border Countries:
-			</span>
-			{borders.map(
-					item => {
-					return (
-							<button className={`border__button ${checkTheme(undefined,theme)}`}>
-									{aliases[item]}
-							</button>
-							)
-					}
-			)}
+		<div className="details__item details__border">
+			<div className="border__box">
+
+				<span className="bold">
+					Border Countries:
+				</span>
+				{borders.map(
+						item => {
+						return (
+								<button className={`border__button ${checkTheme(undefined,theme)}`}>
+										{aliases[item]}
+								</button>
+								)
+						}
+				)}
+			</div>
 		</div>
 	) : '';
-
-
-	if (country) console.log(country);
-
-
 
 	return (
 		<div className={`modal ${checkTheme('app', theme)}`}
@@ -87,19 +85,19 @@ export const Modal = (props) => {
 						className={`country__flag ${checkTheme(undefined, theme)}`}/>
 						<div className="country__details" >
 							<h1 className="details__name">{name.common}</h1>
-							<div><span className="bold">Native name:</span>{Object.values(name.nativeName)[0].common}</div>
-							<div>
-							<span className="bold">
-							Population:
-							</span> {population}</div>
-							<div><span className="bold">Region:</span> {region}</div>
-							<div><span className="bold">Sub Region</span>: {subregion}</div>
-							<div><span className="bold">Capital:</span> {capital}</div>
-							<div><span className="bold">Top level domain:</span> {tld}</div>
-							{/*Map the list of currencies and add a comma if necessary */}
-							{currenciesBlock}
-							{languagesBlock}	
-							{bordersBlock}
+							<div className="details__item"><span className="bold">Native name:</span>{Object.values(name.nativeName)[0].common}</div>
+							<div className="details__item"><span className="bold">Population:</span> {population}</div>
+							<div className="details__item"><span className="bold">Region:</span> {region}</div>
+							<div className="details__item"><span className="bold">Sub Region</span>: {subregion}</div>
+							<div className="details__item" ><span className="bold">Capital:</span> {capital}</div>
+							<div className="details__right">
+								<div className="details__item"><span className="bold">Top level domain:</span> {tld}</div>
+								{/*Map the list of currencies and add a comma if necessary */}
+								{currenciesBlock}
+								{languagesBlock}
+							</div>
+								{bordersBlock}
+							
 
 						</div>
 					</div>

@@ -13,6 +13,7 @@ html, body {
   height: 100%;
 }
 
+
 #root, .app {
   min-height: 100vh;
 }
@@ -21,7 +22,6 @@ html, body {
 body {
   margin:  0;
 }
-
 
 
 .app--light{
@@ -76,9 +76,11 @@ body {
 /* Filters Related syles */ 
 
 .filters {
+  flex-wrap: wrap;
   padding: 50px 80px;
   z-index: 3;
 }
+
 
 .filters__search {
   height: 50px;
@@ -95,6 +97,13 @@ body {
   border: none;
 }
 
+
+.filters__select {
+  height: 50px;
+  border: none;
+}
+
+
 .search__input--light {
   background-color:  var(--container-light);
 }
@@ -105,10 +114,15 @@ body {
   color:  white;
 }
 
+
 .search__select {
   margin-left: auto;
 }
 
+
+.filters__select {
+  margin: 10px auto;
+}
 
 /* Flags Related Styles */
 
@@ -143,14 +157,17 @@ body {
   font-size: 16px; 
 }
 
+
 .card__header, .card__info {
   margin-left:  10%;
 }
+
 
 .card__info {
   margin-bottom: 5px;
   font-weight: lighter;
 } 
+
 
 .bold {
   font-weight: bold;
@@ -159,13 +176,19 @@ body {
 
 @media screen and (min-width: 650px) {
 
+  .filters__select {
+    margin: 10px 0 0 auto;
+  }
+
   .flags_container {
     justify-content: space-between;
   }
 
+
   .container__card {
     width: 270px;
   }
+
 
   .card__image {
     height: 160px;

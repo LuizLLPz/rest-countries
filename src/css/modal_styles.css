@@ -5,6 +5,7 @@
 	width:  100vw;
 	height:  100vh;
 	z-index: 0;
+	overflow: auto;
 }
 
 
@@ -17,6 +18,7 @@
 	flex-direction: column;
 }
 
+
 .modal__goBack {
 	cursor:  pointer;
 	align-items: center;
@@ -27,33 +29,168 @@
 
 
 .modal__country {
-	margin-top: 50px;
+	flex-direction: column;
+	margin-top: 30px;
 }
 
 
 .country__flag {
 	padding: 20px;
-	width: 500px;
-	height:  300px;
+	width: 350px;
+	height:  180px;
 }
 
+
 .country__details {
-	padding: 10px 100px;
+	position: relative;
+	padding: 20px;
+	align-items: flex-start;
 	font-family:  sans-serif;
 }
 
+
 .details__name {
-	margin-bottom:  40px;
+	font-size:  20px;
+	margin-bottom:  10px;
 }
 
 
+.details__item {
+	font-size: 12px;
+	margin: 10px 0;
+}
+
+
+.country__details div:nth-child(7),
 .details__border {
-	margin: 20px 50px 0 0;
-	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	margin-top: 30px;
+	font-size: 16px;
 }
+
+
+.border__box {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+
+.border__box span {
+	position: relative;
+	top: 10px;
+}
+
 
 .border__button {
 	border: 0px;
-	padding: 15px;
-	margin-right: 10px;
+	padding: 10px;
+	margin: 5px;
+}
+
+
+
+@media screen and (max-width: 450px){
+
+	.modal__container {
+		padding: 30px;
+	}
+
+
+	.modal__country {
+		margin-top: 30px;
+		padding: 2px
+	}
+
+
+	.modal__goBack {
+		width: 100px;
+		height: 35px;
+	}
+
+
+	.country__flag {
+		padding: 5px;
+		width: 320px;
+		height:  180px;
+	}
+
+	
+	.details__name {
+		font-size: 20px;
+	}
+
+
+	.border__button {
+		padding: 5px;
+	}
+
+
+}
+
+
+@media screen and (min-width: 650px){
+
+	
+	.modal__country {
+		flex-direction: row;
+	}
+
+
+	.country__flag {
+		margin-top: 50px;
+		padding: 20px;
+		width: 300px;
+		height:  160px;
+	}
+
+	.country__details {
+		padding-top: 50px;
+		padding-left: 50px;
+	}
+
+	.country__details div:nth-child(8) {
+		flex-direction: row;
+	}
+
+
+	.details__name {
+		font-size: 24px;
+		margin-bottom: 20px;
+	}
+
+
+	.details__item {
+		font-size: 16px;
+		margin: 5px;
+	}
+
+}
+
+@media screen and (min-width: 800px) {
+	
+	.country__flag {
+		padding: 20px;
+		width: 400px;
+		height:  220px;
+	}
+
+	
+}
+
+@media screen and (min-width: 1050px) {
+
+	.country__flag {
+		padding: 20px;
+		width: 450px;
+		height:  280px;
+	}
+
+
+	.details__right {
+		position:absolute;
+		top: 80px;
+		right: 0;
+	}
+
 }
